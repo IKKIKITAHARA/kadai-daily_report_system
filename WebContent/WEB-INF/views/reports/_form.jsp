@@ -14,6 +14,7 @@
 
 <label for="report_date">日付</label>
 <br />
+  <!--dateもtextも基本変わらないが、dateのほうが補助機能が使えるかもしれない-->
 <input type="date" name="report_date"
     value="<fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' />" />
 <br />
