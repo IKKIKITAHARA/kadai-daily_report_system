@@ -33,7 +33,7 @@
 <br />
 
 <label for="content">内容</label>
-<br />
+<br />   <!-- rows;行数 cols;文字数 -->
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br />
 <br />
