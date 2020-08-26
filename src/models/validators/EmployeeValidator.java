@@ -14,7 +14,7 @@ public class EmployeeValidator {
 
         List<String> errors = new ArrayList<String>();
 
-        String code_error = _validateCode(e.getCode(), code_duplicate_flag, password_check_flag);
+        String code_error = _validateCode(e.getCode(), code_duplicate_flag);
         if (!code_error.equals("")) {
             errors.add(code_error);
         }
@@ -32,7 +32,7 @@ public class EmployeeValidator {
     }
 
     //if条件を満たした場合、 String型の値"社員・・・"をValidateCodeメソッドを通じてString型code_errorに格納する
-private static String _validateCode(String code, Boolean code_duplicate_check_flag, Boolean password_chek_flag){
+private static String _validateCode(String code, Boolean code_duplicate_check_flag){
      if(code == null || code.equals("")){
          return "社員番号を入力してください。";
      }

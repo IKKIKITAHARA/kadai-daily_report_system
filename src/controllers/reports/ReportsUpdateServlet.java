@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,6 +56,9 @@ public class ReportsUpdateServlet extends HttpServlet {
                 request.setAttribute("_token", request.getSession().getId());
                 request.setAttribute("errors", errors);
                 request.setAttribute("report", r);
+
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/edit.jsp");
+                rd.forward(request,response);
             } else {
                 em.getTransaction().begin();
                 em.getTransaction().commit();

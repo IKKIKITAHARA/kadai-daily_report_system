@@ -64,7 +64,7 @@ public class EmployeesCreateServlet extends HttpServlet {
                 em.close();
 
                 //入力フォームに初期値を設定し、またエラーメッセージも送る
-                request.setAttribute("_tokne", request.getSession().getId());
+                request.setAttribute("_token", request.getSession().getId()); //_tokenがないと、エラー後に_token != nullになってしまう
                 request.setAttribute("employee", e);
                 request.setAttribute("errors", errors);
 

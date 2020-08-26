@@ -85,14 +85,18 @@ public class LoginServlet extends HttpServlet {
             if (e != null) {
                 check_result = true;
             }
+        }
 
-            if (!check_result) {
-                request.setAttribute("_token", request.getSession().getId());
-                request.setAttribute("hasError", true);
-                request.setAttribute("code", code);
+        if (!check_result) {
+            request.setAttribute("_token", request.getSession().getId());
+            request.setAttribute("hasError", true);
+            request.setAttribute("code", code);
 
-            } else {
-            }
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
+            rd.forward(request, response);
+
+        } else {
+
             //セッションスコープにlogin_employeeという名前でその従業員のオブジェクトを格納する
             request.getSession().setAttribute("login_employee", e);
 
