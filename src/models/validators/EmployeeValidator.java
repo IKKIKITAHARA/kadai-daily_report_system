@@ -24,7 +24,7 @@ public class EmployeeValidator {
             errors.add(name_error);
         }
         String password_error = _validatePassword(e.getPassword(), password_check_flag);
-        if (!name_error.equals("")) {
+        if (!password_error.equals("")) {
             errors.add(password_error);
 
         }
@@ -65,11 +65,10 @@ private static String _validateCode(String code, Boolean code_duplicate_check_fl
 
     //PWの必須入力をチェック
     private static String _validatePassword(String password, Boolean password_check_flag) {
-
-        if (password_check_flag && (password == null || password.equals(""))) {
-
+        // パスワードを変更する場合のみ実行
+        if(password_check_flag && (password == null || password.equals(""))) {
             return "パスワードを入力してください。";
         }
-            return "";
-        }
+        return "";
     }
+}

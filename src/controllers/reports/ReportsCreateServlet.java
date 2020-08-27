@@ -52,7 +52,7 @@ public class ReportsCreateServlet extends HttpServlet {
             Date report_date = new Date(System.currentTimeMillis());
             //"report_date" を引数に持つString型変数rd_strを生成
             String rd_str = request.getParameter("report_date");
-            //空欄もしくなnullだった場合は、当日の日付を入れる
+            //空欄もしくnullだった場合は、当日の日付を入れる
             if (rd_str != null && !rd_str.equals("")) {
                 report_date = Date.valueOf(request.getParameter("report_date"));
             }

@@ -34,9 +34,10 @@ public class ReportsNewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         Report r = new Report();
+     // デフォルトで本日の日付をセットしておく
         r.setReport_date(new Date(System.currentTimeMillis()));
 
-        // デフォルトで本日の日付をセットしておく
+
         request.setAttribute("report", r);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
