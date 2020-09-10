@@ -24,7 +24,7 @@
                         <tr>
                             <th>権限</th>
                             <td><c:choose>
-                                    <c:when test="${employee.admin_flag == 1 }" >管理者</c:when>
+                                    <c:when test="${employee.admin_flag == 1 }">管理者</c:when>
                                     <c:otherwise>一般</c:otherwise>
                                 </c:choose></td>
                         </tr>
@@ -42,13 +42,19 @@
 
                 </table>
 
-                <p><a href = "<c:url value ='/employees/edit?id=${employee.id}' />">この従業員情報を編集する</a></p>
+                <p>
+                    <a href="<c:url value ='/employees/edit?id=${employee.id}' />">この従業員情報を編集する</a>
+                </p>
             </c:when>
             <c:otherwise>
-            <h2>お探しのデータは見つかりませんでした。</h2>
+                <h2>お探しのデータは見つかりませんでした。</h2>
             </c:otherwise>
-            </c:choose>
+        </c:choose>
 
-            <p><a href = "<c:url value = 'employees/index'/>">一覧に戻る</a></p>
-            </c:param>
-            </c:import>
+
+
+        <p>
+            <a href="<c:url value = 'employees/index'/>">一覧に戻る</a>
+        </p>
+    </c:param>
+</c:import>
